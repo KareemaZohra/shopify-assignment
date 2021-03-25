@@ -1,0 +1,66 @@
+<section class='image-slider'>
+<h2>Popular Products</h2>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    {% for block in section.blocks %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <img class="d-block w-100" src="{{block.settings.image | img_url:'master'}}" alt="Third slide">
+        <div class="carousel-caption d-none d-md-block">
+    <h5>title</h5>
+    <p>lorem ipsum dolor</p>
+    <a href="#">View Details</a>
+  </div>
+      </div>
+    {% endfor %}
+    
+  </div>
+</div>
+</section>
+
+{% schema %}
+{
+  "name": "Image Slider",
+  "settings" : [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "heading",
+      "default": "Slider title" 
+    }
+    ],
+
+    "blocks":[
+      {
+        "type": "img-block",
+        "name": "img-block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Image Slider",
+        "category": "Image"
+      }
+    ]
+
+  
+}
+{% endschema %}

@@ -22,13 +22,13 @@
   <!-- Helpers ================================================== -->
   {% include 'social-meta-tags' %}
   <link rel="canonical" href="{{ canonical_url }}">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-
+  {{ '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' | stylesheet_tag }}
   <!-- Sections ================================================== -->
   <script>
     window.theme = window.theme || {};
@@ -57,7 +57,8 @@
   <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-
+  {{ '//code.jquery.com/jquery-3.2.1.slim.min.js' | script_tag }}
+  {{ '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' | script_tag }}
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
 
@@ -76,8 +77,7 @@
   Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ request.page_type | handle }}">
-<!-- <h1>Hello Kareema!</h1> -->
-<!-- <h2>This wont be displayed</h2> -->
+
   {% section 'header' %}
 
   <div id="CartDrawer" class="drawer drawer--right drawer--has-fixed-footer">
