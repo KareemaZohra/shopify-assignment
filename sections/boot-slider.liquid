@@ -14,12 +14,20 @@
         <div class="carousel-caption d-none d-md-block">
     <h5 style='color:white'>{{block.settings.title}}</h5>
     <p>{{block.settings.description}}</p>
-     <a href="https://kzshop-dev.myshopify.com/pages/view-details/" style='color:white'>View Details</a>
+     <a href="/pages/view-details" style='color:white'>View Details</a>
   </div>
       </div>
     {% endfor %}
     
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 </section>
 
