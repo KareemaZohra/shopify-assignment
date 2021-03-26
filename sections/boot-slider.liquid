@@ -12,9 +12,9 @@
     <div class="carousel-item {% if forloop.first %}active{% endif %}">
         <img class="d-block w-100" src="{{block.settings.image | img_url:'master'}}" alt="Third slide">
         <div class="carousel-caption d-none d-md-block">
-    <h5>title</h5>
-    <p>lorem ipsum dolor</p>
-    <a href="#">View Details</a>
+    <h5 style='color:white'>{{block.settings.title}}</h5>
+    <p>{{block.settings.description}}</p>
+     <a href="https://kzshop-dev.myshopify.com/pages/view-details/" style='color:white'>View Details</a>
   </div>
       </div>
     {% endfor %}
@@ -49,7 +49,17 @@
           {
             "type": "text",
             "id": "title",
-            "label": "Title"
+            "label": "title"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "description"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "link"
           }
         ]
       }
